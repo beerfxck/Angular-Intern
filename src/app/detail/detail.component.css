@@ -1,0 +1,13 @@
+
+.header {
+    background-color: rgb(150, 10, 10);
+    padding: 10px;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+  }
+  
+  .content {
+    margin-top: 20px;
+  }
+  

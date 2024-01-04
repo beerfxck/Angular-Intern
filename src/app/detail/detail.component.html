@@ -1,6 +1,9 @@
-<!-- detail.component.html -->
 
-<div *ngIf="taskDetails">
+<div class="header">
+    <h1>Task Detail</h1>
+  </div>
+  
+  <div *ngIf="taskDetails" class="content">
     <h2>{{ taskDetails.name }}</h2>
     <p>Date: {{ taskDetails.date | date: 'short' }}</p>
     <p>Description: {{ taskDetails.description }}</p>
