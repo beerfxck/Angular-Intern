@@ -1,0 +1,10 @@
+<!-- detail.component.html -->
+
+<div *ngIf="taskDetails">
+    <h2>{{ taskDetails.name }}</h2>
+    <p>Date: {{ taskDetails.date | date: 'short' }}</p>
+    <p>Description: {{ taskDetails.description }}</p>
+  
+    <button (click)="goBack()">Back to Home</button>
+  </div>
+  
