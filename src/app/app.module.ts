@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailComponent } from './detail/detail.component';
+import { FolllowerComponent } from './folllower/folllower.component';
+import { FollowingsComponent } from './followings/followings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DetailComponent
+    DetailComponent,
+    FolllowerComponent,
+    FollowingsComponent
   ],
   imports: [
     HttpClientModule,

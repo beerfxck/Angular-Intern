@@ -2,6 +2,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 interface Task {
   id: number;
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit {
   profileData: any;
   tasks: Task[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
    
@@ -44,6 +45,14 @@ export class HomeComponent implements OnInit {
           console.error('Error fetching tasks:', error);
         }
       );
+  }
+
+  goToFollowerPage(): void {
+    this.router.navigate(['/follower']);
+  }
+
+  goToFollowingsPage(): void {
+    this.router.navigate(['/followings']);
   }
 
   private convertNumbers(data: any): any {

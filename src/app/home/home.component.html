@@ -5,25 +5,24 @@
     <p>{{ profileData.job }}</p>
     <div class="follow">
       <div class="follow-column">
-        <p class="follow-label">Followers:</p>
+        <p class="follow-label" (click)="goToFollowerPage()">Followers:</p>
         <p class="follow-value">{{ profileData.followers }}</p>
+        
       </div>
       <div class="vertical-divider"></div> 
       <div class="follow-column">
-        <p class="follow-label">Following:</p>
+        <p class="follow-label" (click)="goToFollowingsPage()">Followings:</p>
         <p class="follow-value">{{ profileData.following }}</p>
       </div>
     </div>
   </div>
 </div> 
-  
-
-
 <div class="task-container">
   <div *ngFor="let task of tasks" class="task-box" [style.background-color]="'#B92F23'" [routerLink]="['/detail', task.id]">
     <p>{{ task.name }}</p>
     <p>Date: {{ task.date | date: 'short' }}</p>
   </div>
 </div>
+
 
   

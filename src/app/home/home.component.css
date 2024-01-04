@@ -21,14 +21,17 @@
 }
 
 .vertical-divider {
-  border-left: 5px solid #070101; 
-  height: 85px; 
+  border-left: 5px solid #5f0808; 
+  height: 70px; 
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 
 .follow {
-  background-color: white;
+  background-color: #f1eeee;
   display: flex;
+  align-items: center;
   margin-top: 5px; 
   border-radius: 100px; 
 }
@@ -51,6 +54,7 @@
 .task-box {
   padding: 10px;
   border-radius: 8px;
+  margin-top: 10px;
   background-color: rgb(182, 18, 18); 
   color: white; 
   margin-bottom: 10px; 
