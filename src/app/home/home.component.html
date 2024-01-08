@@ -7,7 +7,6 @@
       <div class="follow-column">
         <p class="follow-label" (click)="goToFollowerPage()">Followers:</p>
         <p class="follow-value">{{ profileData.followers }}</p>
-        
       </div>
       <div class="vertical-divider"></div> 
       <div class="follow-column">
@@ -17,12 +16,10 @@
     </div>
   </div>
 </div> 
+
 <div class="task-container">
-  <div *ngFor="let task of tasks" class="task-box" [style.background-color]="'#B92F23'" [routerLink]="['/detail', task.id]">
+  <div *ngFor="let task of tasks" class="task-box" [style.background-color]="'#B92F23'" (click)="goToTaskDetailPage(task.id)">
     <p>{{ task.name }}</p>
     <p>Date: {{ task.date | date: 'short' }}</p>
   </div>
 </div>
-
-
-  

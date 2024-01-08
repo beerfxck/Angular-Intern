@@ -1,5 +1,3 @@
-// detail.component.ts
-
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -18,13 +16,15 @@ export class DetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.taskId = +params['id']; 
-
+  
       this.http.get(`http://103.13.31.37:17444/api/tasks/${this.taskId}`)
         .subscribe((data: any) => {
           this.taskDetails = data;
+  
         });
     });
   }
+  
 
   goBack(): void {
     this.router.navigate(['/']); 

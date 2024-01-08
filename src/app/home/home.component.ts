@@ -1,15 +1,6 @@
-// home.component.ts
-
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-
-interface Task {
-  id: number;
-  name: string;
-  date: string;
-  description: string;
-}
 
 @Component({
   selector: 'app-home',
@@ -18,7 +9,7 @@ interface Task {
 })
 export class HomeComponent implements OnInit {
   profileData: any;
-  tasks: Task[] = [];
+  tasks: any;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -31,20 +22,9 @@ export class HomeComponent implements OnInit {
 
    
     this.http.get<any[]>('http://103.13.31.37:17444/api/tasks')
-      .subscribe(
-        (data) => {
-          
-          this.tasks = data.map(item => ({
-            id: item.id,
-            name: item.name,
-            date: item.date,
-            description: item.description,
-          }));
-        },
-        (error) => {
-          console.error('Error fetching tasks:', error);
-        }
-      );
+    .subscribe((data: any) => {
+      this.tasks = data;
+    });
   }
 
   goToFollowerPage(): void {
@@ -53,6 +33,14 @@ export class HomeComponent implements OnInit {
 
   goToFollowingsPage(): void {
     this.router.navigate(['/followings']);
+  }
+
+  goToTaskDetailPage(idtask: number): void {
+    this.router.navigate(['/detail', idtask], {
+      queryParams: {
+        id_task: idtask
+      }
+    });
   }
 
   private convertNumbers(data: any): any {
@@ -67,4 +55,7 @@ export class HomeComponent implements OnInit {
 
     return data;
   }
+
+
+  
 }
