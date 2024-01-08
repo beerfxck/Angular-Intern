@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../service/api.service';
 
 @Component({
   selector: 'app-detail',
@@ -11,22 +11,24 @@ export class DetailComponent implements OnInit {
   idtask!: number; 
   taskDetails: any;
 
-  constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private apiService: ApiService  
+  ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.idtask = +params['id']; 
-  
-      this.http.get(`http://103.13.31.37:17444/api/tasks/${this.idtask}`)
+
+      this.apiService.getTaskById(this.idtask)
         .subscribe((data: any) => {
           this.taskDetails = data;
-  
         });
     });
   }
-  
 
   goBack(): void {
-    this.router.navigate(['/']); 
+    this.router.navigate(['/']);
   }
 }

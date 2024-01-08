@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DetailComponent } from './detail/detail.component';
 import { FolllowerComponent } from './folllower/folllower.component';
 import { FollowingsComponent } from './followings/followings.component';
+import { ApiService } from './service/api.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { FollowingsComponent } from './followings/followings.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

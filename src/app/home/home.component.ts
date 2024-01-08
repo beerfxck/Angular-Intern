@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { ApiService } from '../service/api.service';
 
 @Component({
   selector: 'app-home',
@@ -11,20 +11,18 @@ export class HomeComponent implements OnInit {
   profileData: any;
   tasks: any;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private apiService: ApiService, private router: Router) {}
 
   ngOnInit(): void {
-   
-    this.http.get('http://103.13.31.37:17444/api/my/profile')
+    this.apiService.getProfile()
       .subscribe((data: any) => {
         this.profileData = this.convertNumbers(data);
       });
 
-   
-    this.http.get<any[]>('http://103.13.31.37:17444/api/tasks')
-    .subscribe((data: any) => {
-      this.tasks = data;
-    });
+    this.apiService.getTasks()
+      .subscribe((data: any) => {
+        this.tasks = data;
+      });
   }
 
   goToFollowerPage(): void {
@@ -44,18 +42,14 @@ export class HomeComponent implements OnInit {
   }
 
   private convertNumbers(data: any): any {
-
     if (data.followers >= 1000) {
-      data.followers = (data.followers / 1000).toFixed(1) + 'K';
+      data.followers = (data.followers / 1000) + 'K';
     }
 
-    if (data.following >= 1000000) {
-      data.following = (data.following / 1000000000).toFixed(1) + 'B';
+    if (data.following >= 1000000000) {
+      data.following = (data.following / 1000000000) + 'B';
     }
 
     return data;
   }
-
-
-  
 }
