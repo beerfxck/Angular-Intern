@@ -4,6 +4,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    color: rgb(2, 2, 1);
   }
   
   .loading-spinner {
