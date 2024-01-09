@@ -3,16 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { DetailComponent } from './detail/detail.component';
-import { FolllowerComponent } from './folllower/folllower.component';
-import { FollowingsComponent } from './followings/followings.component';
-import { ApiService } from './service/api.service';
-import { NumberFormatPipe } from './pipe/numberformat.pipe';
-import { LoadingInterceptor } from './interceptor/loading-interceptor';
+import { DetailComponent } from './components/detail/detail.component';
+import { FolllowerComponent } from './components/folllower/folllower.component';
+import { FollowingsComponent } from './components/followings/followings.component';
+import { ApiService } from './shared/service/api.service';
+import { NumberFormatPipe } from './shared/pipe/numberformat.pipe';
+import { LoadingInterceptor } from './shared/interceptor/loading-interceptor';
 
-import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
