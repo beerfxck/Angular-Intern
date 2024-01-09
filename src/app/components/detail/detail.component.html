@@ -1,11 +1,13 @@
 <div class="header">
+  <button class="back-button" (click)="goBack()">&#9664;</button>
   <h1>Task Detail</h1>
 </div>
 
 <div *ngIf="taskDetails" class="content">
-  <h2>{{ taskDetails.name }}</h2>
+  <p>{{ taskDetails.name }}</p>
   <p>Date: {{ taskDetails.date | date: 'short' }}</p>
-  <p> {{ taskDetails.description }}</p>
+</div>
 
-  <button (click)="goBack()">Back to Home</button>
+<div class="detail">
+  <p>{{ taskDetails.description }}</p>
 </div>

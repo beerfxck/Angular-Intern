@@ -1,22 +1,35 @@
 .header {
-    background-color: rgb(150, 10, 10);
-    padding: 10px;
-    color: white;
-    border-radius: 20px;
-    text-align: center;
-  }
-  
-  .content {
-    margin-top: 20px;
-  }
+  background-color: rgb(150, 10, 10);
+  padding: 1px;
+  margin-top: 40px;
+  color: white;
+  display: flex; 
+}
 
-  h2{
-    background-color: rgb(150, 10, 10);
-    padding: 10px;
-    border-radius: 20px;
-    color: white;
-  }
-  
-  .content {
-    margin-top: 20px;
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 90px; 
+  margin-left: 10px;
+  color: white;
+}
+
+.content {
+  padding: 3px;
+  background-color: #B92F23;
+}
+
+.content p {
+  color: white;
+  margin-left: 20px;
+  margin-top: 1px;
+}
+
+.detail p {
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: 18px;
 }
