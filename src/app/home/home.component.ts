@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.getProfile()
       .subscribe((data: any) => {
-        this.profileData = this.convertNumbers(data);
+        this.profileData = data;
       });
 
     this.apiService.getTasks()
@@ -41,15 +41,4 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  private convertNumbers(data: any): any {
-    if (data.followers >= 1000) {
-      data.followers = (data.followers / 1000) + 'K';
-    }
-
-    if (data.following >= 1000000000) {
-      data.following = (data.following / 1000000000) + 'B';
-    }
-
-    return data;
-  }
 }

@@ -9,6 +9,7 @@ import { DetailComponent } from './detail/detail.component';
 import { FolllowerComponent } from './folllower/folllower.component';
 import { FollowingsComponent } from './followings/followings.component';
 import { ApiService } from './service/api.service';
+import { NumberFormatPipe } from './pipe/numberformat.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ApiService } from './service/api.service';
     HomeComponent,
     DetailComponent,
     FolllowerComponent,
-    FollowingsComponent
+    FollowingsComponent,
+    NumberFormatPipe
   ],
   imports: [
     HttpClientModule,

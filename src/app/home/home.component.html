@@ -6,12 +6,12 @@
     <div class="follow">
       <div class="follow-column">
         <p class="follow-label" (click)="goToFollowerPage()">Followers:</p>
-        <p class="follow-value">{{ profileData.followers }}</p>
+        <p class="follow-value">{{ profileData.followers | numberFormat}}</p>
       </div>
       <div class="vertical-divider"></div> 
       <div class="follow-column">
         <p class="follow-label" (click)="goToFollowingsPage()">Followings:</p>
-        <p class="follow-value">{{ profileData.following }}</p>
+        <p class="follow-value">{{ profileData.following | numberFormat}}</p>
       </div>
     </div>
   </div>
