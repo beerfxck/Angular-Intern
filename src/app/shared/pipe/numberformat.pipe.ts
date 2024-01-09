@@ -17,7 +17,7 @@ export class NumberFormatPipe implements PipeTransform {
         return (value / 1000000000) + 'B';
 
     } else if (Math.abs(value) >= 100000000) {
-      return (value / 10000000) + 'M';
+      return (value / 1000000) + 'M';
 
     } else if (Math.abs(value) >= 10000000) {
         return (value / 1000000) + 'M';
