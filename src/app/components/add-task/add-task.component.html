@@ -6,12 +6,9 @@
 <form [formGroup]="taskForm">
     <div>
       <label for="topic">Topic:</label>
-      <input type="text" id="topic" formControlName="topic" />
+      <input type="text" id="topic" formControlName="topic" placeholder="Topic"/>
       <div *ngIf="taskForm.get('topic')?.hasError('required')">
-        กรุณากรอกข้อมูลให้ครบถ้วน
-      </div>
-      <div *ngIf="taskForm.get('topic')?.hasError('maxlength')">
-        
+        กรุณากรอกข้อมูลให้ครบถ้วน  
       </div>
     </div>
   
@@ -20,9 +17,6 @@
       <textarea id="description" formControlName="description"></textarea>
       <div *ngIf="taskForm.get('description')?.hasError('required')">
         กรุณากรอกข้อมูลให้ครบถ้วน
-      </div>
-      <div *ngIf="taskForm.get('description')?.hasError('maxlength')">
-        
       </div>
     </div>
 

@@ -16,18 +16,18 @@ export class AddTaskComponent implements OnInit {
 
   ngOnInit(): void {
     this.taskForm = this.fb.group({
-      topic: ['', [Validators.required, Validators.maxLength(50)]],
-      description: ['', [Validators.required, Validators.maxLength(200)]],
+      topic: ['', [Validators.required]],
+      description: ['', [Validators.required]],
     });
   }
 
   goBack(): void {
-    this.router.navigate(['/']); // Replace '/' with the desired route to navigate back
+    this.router.navigate(['/']); 
   }
 
   submitForm(): void {
     if (this.taskForm.valid) {
-      // Perform actions with the form data, such as saving it
+  
       console.log('Form submitted successfully:', this.taskForm.value);
     }
   }
