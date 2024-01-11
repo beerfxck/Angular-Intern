@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { FolllowerComponent } from './components/folllower/folllower.component';
 import { FollowingsComponent } from './components/followings/followings.component';
+import { AddTaskComponent } from './components/add-task/add-task.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'detail/:id', component: DetailComponent },
   { path: 'follower', component: FolllowerComponent }, 
   { path: 'followings', component: FollowingsComponent }, 
+  { path: 'add-task', component: AddTaskComponent }, 
 ];
 
 @NgModule({

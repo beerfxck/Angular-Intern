@@ -1,0 +1,33 @@
+<div class="header">
+    <button class="back-button" (click)="goBack()">&#9664;</button>
+    <h1>Task Detail</h1>
+  </div>
+
+<form [formGroup]="taskForm">
+    <div>
+      <label for="topic">Topic:</label>
+      <input type="text" id="topic" formControlName="topic" />
+      <div *ngIf="taskForm.get('topic')?.hasError('required')">
+        Topic is required.
+      </div>
+      <div *ngIf="taskForm.get('topic')?.hasError('maxlength')">
+        Maximum length is 50 characters.
+      </div>
+    </div>
+  
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" formControlName="description"></textarea>
+      <div *ngIf="taskForm.get('description')?.hasError('required')">
+        Description is required.
+      </div>
+      <div *ngIf="taskForm.get('description')?.hasError('maxlength')">
+        Maximum length is 200 characters.
+      </div>
+    </div>
+
+    <button type="button" (click)="submitForm()">Submit</button>
+  
+
+  </form>
+  

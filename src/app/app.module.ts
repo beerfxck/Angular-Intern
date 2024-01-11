@@ -14,6 +14,7 @@ import { LoadingInterceptor } from './shared/interceptor/loading-interceptor';
 
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AddTaskComponent } from './components/add-task/add-task.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FollowingsComponent,
     NumberFormatPipe,
     LoadingSpinnerComponent,
+    AddTaskComponent,
   ],
   imports: [
     HttpClientModule,
