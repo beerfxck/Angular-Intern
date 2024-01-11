@@ -13,6 +13,7 @@ import { NumberFormatPipe } from './shared/pipe/numberformat.pipe';
 import { LoadingInterceptor } from './shared/interceptor/loading-interceptor';
 
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [ApiService,
     {
