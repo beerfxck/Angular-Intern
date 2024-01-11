@@ -5,6 +5,7 @@ import { DetailComponent } from './components/detail/detail.component';
 import { FolllowerComponent } from './components/folllower/folllower.component';
 import { FollowingsComponent } from './components/followings/followings.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
+import { EditTaskComponent } from './components/edit-task/edit-task.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'follower', component: FolllowerComponent }, 
   { path: 'followings', component: FollowingsComponent }, 
   { path: 'add-task', component: AddTaskComponent }, 
+  { path: 'edit-task/:id', component: EditTaskComponent },
 ];
 
 @NgModule({

@@ -53,6 +53,7 @@
 
 .task-box {
   padding: 3px;
+  position: relative;
   border-radius: 8px;
   margin-top: 10px;
   margin-left: 10px;
@@ -64,4 +65,31 @@
 
 .task-box p {
   margin-left: 30px; 
+}
+
+.edit-button,
+.delete-button {
+  position: absolute;
+  top: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.edit-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 5px 10px;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+.delete-button {
+  right: 5px;
+  margin-top: 30px;
+  background-color: #ff0000;
+  color: #fff;
+  border: 1px solid #ff0000;
 }

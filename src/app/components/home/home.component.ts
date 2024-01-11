@@ -40,9 +40,17 @@ export class HomeComponent implements OnInit {
       }
     });
   }
-  
+
   goToAddTaskPage(): void {
-    this.router.navigate(['/add-task']); // Navigate to the add-task component
+    this.router.navigate(['/add-task']); 
+  }
+
+  editTask(taskId: number): void {
+    this.router.navigate(['/edit-task', taskId]);
+  }
+
+  deleteTask(taskId: number): void {
+
   }
 
 }
