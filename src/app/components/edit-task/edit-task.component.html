@@ -2,3 +2,24 @@
     <button class="back-button" (click)="goBack()">&#9664;</button>
     <h1>edit work</h1>
   </div>
+
+  <form [formGroup]="taskForm">
+    <div>
+      <label for="topic">Topic:</label>
+      <input type="text" id="topic" formControlName="topic" placeholder="Topic"/>
+      <div *ngIf="taskForm.get('topic')?.hasError('required')">
+        กรุณากรอกข้อมูลให้ครบถ้วน  
+      </div>
+    </div>
+  
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" formControlName="description" placeholder="description"></textarea>
+      <div *ngIf="taskForm.get('description')?.hasError('required')">
+        กรุณากรอกข้อมูลให้ครบถ้วน
+      </div>
+    </div>
+  
+  </form>
+  
+  <button class="btnSubmit" type="button" (click)="editSuccess()">Submit</button>

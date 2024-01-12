@@ -29,7 +29,9 @@ export class AddTaskComponent implements OnInit {
     if(this.taskForm.valid){
       localStorage.setItem("task",JSON.stringify(this.taskForm.value));
       this.router.navigate(['/'])
-      alert("Task created successfully.")
+      alert("create task success !!");
+    } else {
+      alert("Please fill tha data :)");
     }
   }
 }
