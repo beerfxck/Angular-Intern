@@ -19,10 +19,24 @@ export class HomeComponent implements OnInit {
         this.profileData = data;
       });
 
-    this.apiService.getTasks()
-      .subscribe((data: any) => {
-        this.tasks = data;
-      });
+    // this.apiService.getTasks()
+    //   .subscribe((data: any) => {
+    //     this.tasks = data;
+    //   });
+
+      this.getTask();
+
+  }
+
+  getTask() {
+    const task = localStorage.getItem("task");
+
+    if (task !== null) {
+      this.tasks = JSON.parse(task);
+      console.log(this.tasks)
+    } else {
+      console.log("ไม่พบข้อมูล")
+    }
   }
 
   goToFollowerPage(): void {
@@ -45,11 +59,11 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/add-task']); 
   }
 
-  editTask(taskId: number): void {
-    this.router.navigate(['/edit-task', taskId]);
+  editTask(): void {
+    this.router.navigate(['/edit-task']);
   }
 
-  deleteTask(taskId: number): void {
+  deleteTask(): void {
 
   }
 

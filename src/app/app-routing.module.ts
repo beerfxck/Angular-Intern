@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'follower', component: FolllowerComponent }, 
   { path: 'followings', component: FollowingsComponent }, 
   { path: 'add-task', component: AddTaskComponent }, 
-  { path: 'edit-task/:id', component: EditTaskComponent },
+  { path: 'edit-task', component: EditTaskComponent },
 ];
 
 @NgModule({

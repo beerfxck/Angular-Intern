@@ -26,9 +26,10 @@ export class AddTaskComponent implements OnInit {
   }
 
   submitForm(): void {
-    if (this.taskForm.valid) {
-  
-      console.log('Form submitted successfully:', this.taskForm.value);
+    if(this.taskForm.valid){
+      localStorage.setItem("task",JSON.stringify(this.taskForm.value));
+      this.router.navigate(['/'])
+      alert("Task created successfully.")
     }
   }
 }

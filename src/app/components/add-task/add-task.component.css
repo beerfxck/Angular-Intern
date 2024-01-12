@@ -1,6 +1,6 @@
 .header {
     background-color: rgb(150, 10, 10);
-    padding: 1px;
+    width: 100%;
     margin-top: 40px;
     color: white;
     display: flex; 
@@ -11,8 +11,8 @@
     border: none;
     font-size: 20px;
     cursor: pointer;
-    margin-right: 90px; 
-    margin-left: 10px;
+    margin-right: 100px; 
+    margin-left: 0px;
     color: white;
   }
 
@@ -43,7 +43,7 @@ form {
     box-sizing: border-box;
   }
 
-  button{
+  .btnSubmit{
     background-color: green;
     color: white;
     width: 100%;

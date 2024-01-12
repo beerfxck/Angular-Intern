@@ -17,7 +17,7 @@
   </div>
 </div> 
 
-<div class="task-container">
+<!-- <div class="task-container">
   <button (click)="goToAddTaskPage()" class="add-task-button">Add Task</button>
   <div *ngFor="let task of tasks" class="task-box" [style.background-color]="'#B92F23'" (click)="goToTaskDetailPage(task.id)">
     <button class="edit-button" (click)="editTask(task.id)">Edit</button>
@@ -25,6 +25,17 @@
     <p>{{ task.name }}</p>
     <p>Date: {{ task.date | date: 'short' }}</p>
   </div>
+</div> -->
+
+<div class="task-container">
+  <button (click)="goToAddTaskPage()" class="add-task-button">Add Task</button>
+  <div class="task-box" [style.background-color]="'#B92F23'" (click)="goToTaskDetailPage(tasks.id)">
+    <button class="edit-button" (click)="editTask()">Edit</button>
+    <button class="delete-button" (click)="deleteTask()">Delete</button>
+    <p>{{ tasks.topic }}</p>
+    <p>{{ tasks.description }}</p>
+  </div>
 </div>
+
 
 
