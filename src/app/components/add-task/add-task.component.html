@@ -7,20 +7,14 @@
     <div>
       <label for="topic">Topic:</label>
       <input type="text" id="topic" formControlName="topic" placeholder="Topic"/>
-      <div *ngIf="taskForm.get('topic')?.hasError('required')">
-        กรุณากรอกข้อมูลให้ครบถ้วน  
-      </div>
     </div>
   
     <div>
       <label for="description">Description:</label>
       <textarea id="description" formControlName="description" placeholder="description"></textarea>
-      <div *ngIf="taskForm.get('description')?.hasError('required')">
-        กรุณากรอกข้อมูลให้ครบถ้วน
       </div>
-    </div>
-  
+
   </form>
   
-  <button class="btnSubmit" type="button" (click)="submitForm()">Submit</button>
+  <button class="btnSubmit" type="button" (click)="createTask()">Submit</button>
   

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../../shared/service/api.service';
+import { Task } from 'src/app/shared/interface/Task';
+import { LocalTask } from 'src/app/shared/interface/Task-Local';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +11,9 @@ import { ApiService } from '../../shared/service/api.service';
 })
 export class HomeComponent implements OnInit {
   profileData: any;
-  tasks: any;
+  task: Task[] = [];
+  taskLocal: LocalTask[] = [];
+  tasks: any[] = [];
 
   constructor(private apiService: ApiService, private router: Router) {}
 
@@ -59,12 +63,38 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/add-task']); 
   }
 
-  editTask(): void {
-    this.router.navigate(['/edit-task']);
+  editTask(idtask: number): void {
+    this.router.navigate(['/edit-task'], {
+      queryParams: {
+        id: idtask
+      }
+    });
   }
 
-  deleteTask(): void {
-
+  deleteTask(idtask: number): void {
+    const confirmDelete = window.confirm('ต้องการลบใช่หรือไม่');
+  
+    if (confirmDelete) {
+      const storedTasks = localStorage.getItem('task');
+  
+      if (storedTasks) {
+        const tasks: LocalTask[] = JSON.parse(storedTasks);
+  
+        const taskIndex = tasks.findIndex(task => task.id === idtask);
+  
+        if (taskIndex !== -1) {
+          tasks.splice(taskIndex, 1);
+          localStorage.setItem('task', JSON.stringify(tasks));
+          alert('ลบ Task เสร็จสิ้น');
+        } else {
+          console.error('ไม่พบ Task ที่ตรงกับ ID ที่ต้องการลบ');
+        }
+      } else {
+        console.error('ไม่พบข้อมูลทั้งหมด');
+      }
+    } else {
+      alert('ยกเลิกการลบ');
+    }
   }
 
 }

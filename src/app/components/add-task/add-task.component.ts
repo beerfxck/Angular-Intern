@@ -1,8 +1,8 @@
 // add-task.component.ts
 
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router'; // Import the Router
+import { Component, OnInit, inject } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-task',
@@ -11,27 +11,38 @@ import { Router } from '@angular/router'; // Import the Router
 })
 export class AddTaskComponent implements OnInit {
   taskForm!: FormGroup;
-
-  constructor(private fb: FormBuilder, private router: Router) {} // Inject the Router
+  private router = inject(Router);
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.taskForm = this.fb.group({
-      topic: ['', [Validators.required]],
-      description: ['', [Validators.required]],
+      topic: new FormControl<string | null>(null, Validators.required),
+      description: new FormControl<string | null>(null, Validators.required),
     });
   }
 
   goBack(): void {
-    this.router.navigate(['/']); 
+    this.router.navigate(['/']);
   }
 
-  submitForm(): void {
-    if(this.taskForm.valid){
-      localStorage.setItem("task",JSON.stringify(this.taskForm.value));
-      this.router.navigate(['/'])
-      alert("create task success !!");
-    } else {
-      alert("Please fill tha data :)");
+  createTask(): void {
+    if (this.taskForm.valid) {
+      const storageData = localStorage.getItem("task");
+      let existingData = storageData ? JSON.parse(storageData) : [];
+      const idtask = existingData.length + 1;
+
+      const newData = {
+        id: idtask,
+        ...this.taskForm.value, 
+        date: new Date().toISOString(),
+      };
+
+      existingData = existingData.concat(newData);
+
+      localStorage.setItem("task", JSON.stringify(existingData));
+
+      this.router.navigate(['/']);
+      alert("Create Task complete!");
     }
   }
 }
