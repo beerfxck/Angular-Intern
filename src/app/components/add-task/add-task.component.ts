@@ -43,6 +43,8 @@ export class AddTaskComponent implements OnInit {
 
       this.router.navigate(['/']);
       alert("Create Task complete!");
+    } else {
+      alert("กรุณากรอกข้อมูลให้ครบถ้วน");
     }
   }
 }
