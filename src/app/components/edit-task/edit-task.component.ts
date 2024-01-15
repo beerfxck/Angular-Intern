@@ -68,7 +68,7 @@ export class EditTaskComponent implements OnInit {
   }
 
   goBack(): void {
-    this.router.navigate(['/']);
+    this.location.back();
   }
 
   editSuccess(): void {
@@ -96,7 +96,7 @@ export class EditTaskComponent implements OnInit {
 
             // clear tasksLocal
             this.tasksLocal = [];
-            this.router.navigate(['/profile'])
+            this.router.navigate(['/'])
             alert('แก้ไข Task เสร็จสิ้น');
         } else {
             console.error('ไม่พบ Task ที่ตรงกับ ID ที่ต้องการแก้ไข');

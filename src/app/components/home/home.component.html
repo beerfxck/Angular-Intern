@@ -33,7 +33,7 @@
     <button class="edit-button" (click)="editTask(task.id)">Edit</button>
     <button class="delete-button" (click)="deleteTask(task.id)">Delete</button>
     <p>{{ task.topic }}</p>
-    <p>{{ task.description }}</p>
+    <p>{{ task.date | date: 'short' }}</p>
   </div>
 </div>
 
