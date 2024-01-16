@@ -15,22 +15,22 @@ export class DetailComponent implements OnInit {
   tasksLocal: LocalTask[] = [];
   task!: Task;
 
-  private _activatedRoute = inject(ActivatedRoute);
+  private activatedRoute = inject(ActivatedRoute);
   private apiService = inject(ApiService);
   private router = inject(Router);
 
 
   ngOnInit(): void {
-    // this.route.params.subscribe(params => {
-    //   this.idtask = +params['id']; 
-
+    // this.activatedRoute.params.subscribe(params => {
+    //   this.idtask = +params['id'];
+  
     //   this.apiService.getTaskById(this.idtask)
     //     .subscribe((data: any) => {
     //       this.taskDetails = data;
     //     });
     // });
 
-    this._activatedRoute.queryParams.subscribe(params => {
+    this.activatedRoute.queryParams.subscribe(params => {
       const id = params['id'];
       console.log(id);
       this.getTaskById(Number(id));
