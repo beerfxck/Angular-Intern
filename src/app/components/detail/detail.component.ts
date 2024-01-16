@@ -10,6 +10,7 @@ import { Task } from 'src/app/shared/interface/Task';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
+  idtask!: number; 
   taskDetails: any;
   localDetail: LocalTask[] = [];
 
