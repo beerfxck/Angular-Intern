@@ -13,6 +13,7 @@ export class DetailComponent implements OnInit {
   idtask!: number; 
   taskDetails: any;
   localDetail: LocalTask[] = [];
+  task!: Task;
 
   private activatedRoute = inject(ActivatedRoute);
   private apiService = inject(ApiService);
