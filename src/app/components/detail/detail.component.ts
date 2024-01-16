@@ -16,11 +16,20 @@ export class DetailComponent implements OnInit {
   task!: Task;
 
   private _activatedRoute = inject(ActivatedRoute);
+  private apiService = inject(ApiService);
   private router = inject(Router);
-  private apiService = inject(ApiService );
 
 
   ngOnInit(): void {
+    // this.route.params.subscribe(params => {
+    //   this.idtask = +params['id']; 
+
+    //   this.apiService.getTaskById(this.idtask)
+    //     .subscribe((data: any) => {
+    //       this.taskDetails = data;
+    //     });
+    // });
+
     this._activatedRoute.queryParams.subscribe(params => {
       const id = params['id'];
       console.log(id);
@@ -56,4 +65,6 @@ export class DetailComponent implements OnInit {
   goBack(): void {
     this.router.navigate(['/']);
   }
+
+
 }

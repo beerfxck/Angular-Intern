@@ -32,7 +32,7 @@ export class EditTaskComponent implements OnInit {
   });
 
   this._activatedRoute.queryParams.subscribe(params => {
-      this.id = +params['id']; // ใส่เครื่องหมาย + เพื่อแปลงเป็น number
+      this.id = +params['id']; 
       console.log("Received ID:", this.id, typeof this.id);
 
       this.getTaskInfo(this.id);
