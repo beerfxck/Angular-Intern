@@ -4,8 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LocalTask } from 'src/app/shared/interface/Task-Local';
 import { Location } from '@angular/common'
 
-// import statements...
-
 @Component({
   selector: 'app-edit-task',
   templateUrl: './edit-task.component.html',
@@ -14,7 +12,6 @@ import { Location } from '@angular/common'
 export class EditTaskComponent implements OnInit {
   
   taskForm!: FormGroup;
-  taskInfo: any = { topic: '', description: '' };
   tasksLocal: LocalTask[] = [];
   id!: number;
 

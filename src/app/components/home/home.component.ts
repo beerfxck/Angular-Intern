@@ -59,6 +59,14 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  goToDetailLocal(idtask: number): void {
+    this.router.navigate(['/detail'], {
+      queryParams: {
+        id: idtask
+      }
+    });
+  }
+
   goToAddTaskPage(): void {
     this.router.navigate(['/add-task']); 
   }

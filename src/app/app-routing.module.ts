@@ -10,7 +10,7 @@ import { EditTaskComponent } from './components/edit-task/edit-task.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'detail/:id', component: DetailComponent },
+  { path: 'detail', component: DetailComponent },
   { path: 'follower', component: FolllowerComponent }, 
   { path: 'followings', component: FollowingsComponent }, 
   { path: 'add-task', component: AddTaskComponent }, 

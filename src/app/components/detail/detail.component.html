@@ -1,13 +1,14 @@
+
 <div class="header">
   <button class="back-button" (click)="goBack()">&#9664;</button>
   <h1>Task Detail</h1>
 </div>
 
-<div *ngIf="taskDetails" class="content">
-  <p>{{ taskDetails.name }}</p>
-  <p>Date: {{ taskDetails.date | date: 'short' }}</p>
+<div *ngIf="tasksLocal && tasksLocal.length > 0" class="content">
+  <p>{{ tasksLocal[0].topic }}</p>
+  <p>Date: {{ tasksLocal[0].date | date: 'short' }}</p>
 </div>
 
 <div class="detail">
-  <p>{{ taskDetails.description }}</p>
+  <p>{{ tasksLocal[0].description }}</p>
 </div>
