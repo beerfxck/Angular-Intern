@@ -16,7 +16,7 @@ export class EditTaskComponent implements OnInit {
   id!: number;
 
   private location = inject(Location);
-  private _activatedRoute = inject(ActivatedRoute);
+  private activatedRoute = inject(ActivatedRoute);
 
   constructor(private fb: FormBuilder, private router: Router) {
     this.taskForm = this.fb.group({
@@ -31,7 +31,7 @@ export class EditTaskComponent implements OnInit {
       description: new FormControl<string | null>(null, Validators.required),
   });
 
-  this._activatedRoute.queryParams.subscribe(params => {
+  this.activatedRoute.queryParams.subscribe(params => {
       this.id = +params['id']; 
       console.log("Received ID:", this.id, typeof this.id);
 
