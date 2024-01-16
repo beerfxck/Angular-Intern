@@ -1,7 +1,5 @@
 .header {
   background-color: rgb(150, 10, 10);
-  padding: 1px;
-  margin-top: 40px;
   color: white;
   display: flex; 
 }
