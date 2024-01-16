@@ -60,12 +60,14 @@
   margin-bottom: 10px;
 }
 
-.add-task-button-container {
+.add-task-button {
   margin-top: 10px;
   margin-right: 10px; 
+  font-size: 18px; 
+  background-color: green;
+  color: white;
+
 }
-
-
 
 .task-box {
   padding: 3px;
@@ -88,23 +90,23 @@
   position: absolute;
   top: 5px;
   padding: 5px 10px;
-  cursor: pointer;
+
 }
 
 .edit-button {
   position: absolute;
-  top: 5px;
+  top: 10px;
   right: 5px;
-  padding: 5px 10px;
+  padding: 5px 18px;
   background-color: #fff;
   color: #000;
   border: 1px solid #000;
-  cursor: pointer;
+
 }
 
 .delete-button {
   right: 5px;
-  margin-top: 30px;
+  margin-top: 40px;
   background-color: #ff0000;
   color: #fff;
   border: 1px solid #ff0000;

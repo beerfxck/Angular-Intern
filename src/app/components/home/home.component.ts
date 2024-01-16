@@ -81,19 +81,16 @@ export class HomeComponent implements OnInit {
 
   deleteTask(idtask: number): void {
     const confirmDelete = window.confirm('ต้องการลบใช่หรือไม่');
-  
     if (confirmDelete) {
       const storedTasks = localStorage.getItem('task');
-  
       if (storedTasks) {
         const tasks: LocalTask[] = JSON.parse(storedTasks);
-  
         const taskIndex = tasks.findIndex(task => task.id === idtask);
-  
         if (taskIndex !== -1) {
           tasks.splice(taskIndex, 1);
           localStorage.setItem('task', JSON.stringify(tasks));
           alert('ลบ Task เสร็จสิ้น');
+          this.getTask();
         } else {
           console.error('ไม่พบ Task ที่ตรงกับ ID ที่ต้องการลบ');
         }

@@ -30,7 +30,9 @@
 <div class="task-container">
   <div class="task-header">
     <div class="add-task-button-container">
-      <button (click)="goToAddTaskPage()" class="add-task-button">Add Task</button>
+      <button (click)="goToAddTaskPage()" class="add-task-button">
+        <i class="fas fa-plus"></i> Add Task
+      </button>
     </div>
   </div>
   <div *ngFor="let task of tasks" class="task-box" [style.background-color]="'#B92F23'" (click)="goToDetailLocal(task.id)">
