@@ -69,41 +69,44 @@ export class EditTaskComponent implements OnInit {
   }
 
   editSuccess(): void {
-     // ตรวจสอบว่า validateForm ถูกต้อง
-  if (this.taskForm && this.taskForm.valid) {
-    // ดึงข้อมูลทั้งหมดจาก Local Storage
-    const storageData = localStorage.getItem('task');
-
-    if (storageData) {
-        const tasks: LocalTask[] = JSON.parse(storageData);
-
-        // ค้นหา index ของ task ที่ตรงกับ ID ที่ต้องการแก้ไข
-        const taskIndex = tasks.findIndex(task => task.id === this.id);
-
-        if (taskIndex !== -1) {
-            // แก้ไขข้อมูล topic และ description ใน tasks ด้วยค่าจาก validateForm
+    // ตรวจสอบว่า validateForm ถูกต้อง
+    if (this.taskForm && this.taskForm.valid) {
+      // แสดง alert ยืนยันการแก้ไข
+      const userConfirmation = confirm('คุณต้องการแก้ไข Task นี้หรือไม่?');
+  
+      if (userConfirmation) {
+        // ดำเนินการแก้ไข Task
+        const storageData = localStorage.getItem('task');
+  
+        if (storageData) {
+          const tasks: LocalTask[] = JSON.parse(storageData);
+  
+          const taskIndex = tasks.findIndex(task => task.id === this.id);
+  
+          if (taskIndex !== -1) {
             tasks[taskIndex].topic = this.taskForm.value.topic;
             tasks[taskIndex].description = this.taskForm.value.description;
-
-            // กำหนดเวลาที่แก้ไขใน properties date
             tasks[taskIndex].date = new Date().toISOString();
-
-            // บันทึกข้อมูลทั้งหมดลงใน Local Storage
+  
             localStorage.setItem('task', JSON.stringify(tasks));
-
-            // clear tasksLocal
+  
             this.tasksLocal = [];
-            this.router.navigate(['/'])
+            this.router.navigate(['/']);
             alert('แก้ไข Task เสร็จสิ้น');
-        } else {
+          } else {
             console.error('ไม่พบ Task ที่ตรงกับ ID ที่ต้องการแก้ไข');
+          }
+        } else {
+          console.error('ไม่พบข้อมูลทั้งหมด');
         }
+      } else {
+        // User chose not to edit, you can handle this case accordingly
+        console.log('User canceled the edit operation.');
+      }
     } else {
-        console.error('ไม่พบข้อมูลทั้งหมด');
+      console.error('กรุณากรอกข้อมูลให้ครบถ้วน');
     }
-} else {
-    console.error('กรุณากรอกข้อมูลให้ครบถ้วน');
-}
-}
+  }
+  
 }
 

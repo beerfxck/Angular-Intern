@@ -28,7 +28,11 @@
 </div> -->
 
 <div class="task-container">
-  <button (click)="goToAddTaskPage()" class="add-task-button">Add Task</button>
+  <div class="task-header">
+    <div class="add-task-button-container">
+      <button (click)="goToAddTaskPage()" class="add-task-button">Add Task</button>
+    </div>
+  </div>
   <div *ngFor="let task of tasks" class="task-box" [style.background-color]="'#B92F23'" (click)="goToDetailLocal(task.id)">
     <button class="edit-button" (click)="editTask(task.id)">Edit</button>
     <button class="delete-button" (click)="deleteTask(task.id)">Delete</button>

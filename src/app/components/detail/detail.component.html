@@ -4,11 +4,11 @@
   <h1>Task Detail</h1>
 </div>
 
-<div *ngIf="tasksLocal && tasksLocal.length > 0" class="content">
-  <p>{{ tasksLocal[0].topic }}</p>
-  <p>Date: {{ tasksLocal[0].date | date: 'short' }}</p>
+<div *ngIf="localDetail && localDetail.length > 0" class="content">
+  <p>{{ localDetail[0].topic }}</p>
+  <p>Date: {{ localDetail[0].date | date: 'short' }}</p>
 </div>
 
 <div class="detail">
-  <p>{{ tasksLocal[0].description }}</p>
+  <p>{{ localDetail[0].description }}</p>
 </div>

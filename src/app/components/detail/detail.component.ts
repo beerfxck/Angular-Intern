@@ -10,10 +10,8 @@ import { Task } from 'src/app/shared/interface/Task';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
-  idtask!: number; 
   taskDetails: any;
-  tasksLocal: LocalTask[] = [];
-  task!: Task;
+  localDetail: LocalTask[] = [];
 
   private activatedRoute = inject(ActivatedRoute);
   private apiService = inject(ApiService);
@@ -53,7 +51,7 @@ export class DetailComponent implements OnInit {
             // ตั้งค่าฟอร์ม validateForm ด้วยข้อมูลที่ได้
             console.log('Found Task:', foundTask);
             // ตั้งค่า tasksLocal ด้วยข้อมูลที่ได้
-            this.tasksLocal = [foundTask];
+            this.localDetail = [foundTask];
         } else {
             console.error('ไม่พบ Task ที่ตรงกับ ID');
         }
